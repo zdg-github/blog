@@ -95,7 +95,7 @@ public class TaleUtils {
             props.setProperty("spring.datasource.dbname", dbName);
             props.setProperty("spring.datasource.username", userName);
             props.setProperty("spring.datasource.password", password);
-            props.setProperty("spring.datasource.driver-class-name", "com.mysql.jdbc.Driver");
+            props.setProperty("spring.datasource.driver-class-name", "com.mysql.cj.jdbc.Driver");
             props.store(fos, "update jdbc info.");
         } catch (IOException e) {
             LOGGER.error("updateJDBCFile method fail:{}", e.getMessage());
@@ -190,7 +190,7 @@ public class TaleUtils {
                 }
                 DriverManagerDataSource managerDataSource = new DriverManagerDataSource();
                 //        TODO 对不同数据库支持
-                managerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
+                managerDataSource.setDriverClassName(properties.getProperty("spring.datasource.driverClassName"));
                 managerDataSource.setPassword(properties.getProperty("spring.datasource.password"));
                 String str = "jdbc:mysql://" + properties.getProperty("spring.datasource.url") + "/" + properties.getProperty("spring.datasource.dbname") + "?useUnicode=true&characterEncoding=utf-8&useSSL=false";
                 managerDataSource.setUrl(str);

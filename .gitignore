@@ -26,3 +26,6 @@ upload
 target
 tale.sql
 *.md
+.vscode
+# personal-blog
+admin-blog

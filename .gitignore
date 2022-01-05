@@ -27,5 +27,5 @@ target
 tale.sql
 *.md
 .vscode
-# personal-blog
+personal-blog
 admin-blog
